@@ -7,17 +7,18 @@
         <router-view></router-view>
       </v-container>
     </v-main>
-    
+ <Footer/> 
   </v-app>
 </template>
 
 <script>
 import Navbar from './components/Navbar.vue'
 import HelloWorld from './components/HelloWorld.vue'
-
+import Footer from './components/Footer.vue'
 export default {
   components: { 
-    Navbar
+    Navbar,
+    Footer
   },
   name: 'App',
   plugins:{

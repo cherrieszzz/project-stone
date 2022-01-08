@@ -1,15 +1,21 @@
 <template>
-   <hello-world />
+  <div>
+    <Stone />
+    <Stone />
+    <Stone />
+    <Stone />
+    <Stone />
+    <Stone />
+  </div>
 </template>
 
 <script>
-  import HelloWorld from '../components/HelloWorld'
+import Stone from "../components/Stone.vue";
+export default {
+  name: "Home",
 
-  export default {
-    name: 'Home',
-
-    components: {
-      HelloWorld,
-    },
-  }
+  components: {
+    Stone,
+  },
+};
 </script>

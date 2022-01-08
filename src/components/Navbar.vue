@@ -1,71 +1,33 @@
 <template>
-    <nav>
-    <v-navigation-drawer app touchless v-model="drawer_open">
-      <v-list-item>
-        <v-list-item-content>
-          <v-list-item-title class="text-h6">
-            Course+
-          </v-list-item-title>
-          <v-list-item-subtitle>
-            subtext
-          </v-list-item-subtitle>
-        </v-list-item-content>
-      </v-list-item>
+  <div>
+    <v-app-bar color="blue accent-4" dense dark>
+      <v-app-bar-nav-icon></v-app-bar-nav-icon>
 
-      <v-divider></v-divider>
+      <v-toolbar-title>doob.cn</v-toolbar-title>
 
-      <v-list
-        dense
-        nav
-      >
-        <v-list-item
-          v-for="item in items"
-          :key="item.title"
-          link
-          :to="item.to"
-        >
-          <v-list-item-icon>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-icon>
+      <v-spacer></v-spacer>
 
-          <v-list-item-content>
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
+      <v-btn icon to="/">
+        <v-icon>mdi-home</v-icon>
+      </v-btn>
 
-    <v-app-bar app v-model="this.$vuetify.breakpoint.mdAndDown" color="primary" dark>
-        <v-app-bar-nav-icon @click="drawer_open = !drawer_open"/>
-      <v-toolbar-title class="headline" >
-        <span>Course+</span>
-      </v-toolbar-title>
+      <v-btn icon to="/About">
+        <v-icon>mdi-heart</v-icon>
+      </v-btn>
+
+      <v-menu left bottom>
+        <template v-slot:activator="{ on, attrs }">
+          <v-btn icon v-bind="attrs" v-on="on">
+            <v-icon>mdi-dots-vertical</v-icon>
+          </v-btn>
+        </template>
+
+        <v-list>
+          <v-list-item v-for="n in 5" :key="n" @click="() => {}">
+            <v-list-item-title>Option {{ n }}</v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-menu>
     </v-app-bar>
-    
-    </nav>
-
-
-
-  
-    
-
-
+  </div>
 </template>
-
-<script>
-  export default {
-    name:'Navbar',
-    
-    data () {
-      return {
-        items: [
-          { title: 'Home', icon: 'mdi-view-dashboard',to: '/' },
-          { title: 'Photos', icon: 'mdi-image',to:'/pdf' },
-          { title: 'About', icon: 'mdi-help-box',to:'/About' },
-        ],
-        right: null,
-        drawer_open: null
-      }
-    },
-  }
-</script>
