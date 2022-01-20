@@ -9,10 +9,12 @@
   },
   "dependencies": {
     "animate.css": "^4.1.1",
+    "axios": "^0.24.0",
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
     "vue-pdf": "^4.3.0",
     "vue-router": "^3.2.0",
+    "vue-swal": "^1.0.0",
     "vuetify": "^2.4.0"
   },
   "devDependencies": {

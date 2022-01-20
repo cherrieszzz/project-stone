@@ -1,4 +1,4 @@
-# my-app
+# project-stone
 
 ## Project setup
 ```

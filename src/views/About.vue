@@ -1,17 +1,7 @@
 <template>
-<v-container>
-  <div class="row">
-  <Goods/>
-  <Goods/>
-  <Goods/>
-  <Goods/>
-  <Goods/>
-  <Goods/>
-</div>
-</v-container>
-
- 
- 
+  <v-container>
+    <Goods/>
+  </v-container>
 </template>
 
 <script>
