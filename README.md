@@ -1,5 +1,5 @@
-# project-stone
-
+# Project-stone
+A simple product display website
 ## Project setup
 ```
 npm install

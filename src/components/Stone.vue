@@ -1,9 +1,9 @@
 <template>
   <v-row justify="space-around" class="stone">
-    <v-col >
+    <v-col>
       <v-dialog transition="dialog-top-transition" max-width="600">
         <template v-slot:activator="{ on, attrs }">
-          <button  v-bind="attrs" v-on="on" class="text-right">
+          <button v-bind="attrs" v-on="on" class="text-right">
             <v-img
               :src="img_src"
               class="stone-anime text-right"
@@ -17,8 +17,10 @@
 
             <v-img
               :src="img_src"
-              style="height: 5rem; width: 5rem"
-              class="text-left animate__animated animate__bounce animate__infinite"
+              style="height: 5rem; width: 5rem;border-radius: 50%"
+              class="
+                text-left
+              "
               alt=""
             ></v-img>
 
@@ -39,7 +41,7 @@
 <script>
 export default {
   data: () => ({
-    name: "What Stone?",
+    name: "Stone Name",
     img_src: "https://api.ixiaowai.cn/api/api.php",
     tradtion:
       "Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.",
@@ -48,23 +50,21 @@ export default {
 </script>
 
 <style scoped>
-
-
-.stone-anime{
-     animation: lb 15s linear infinite;
+.stone-anime {
+  animation: lb 15s linear infinite;
 }
 
-.stone-anime:hover{
-    animation-play-state: paused;
+.stone-anime:hover {
+  animation-play-state: paused;
 }
 
- @keyframes lb {
-            form {
-                transform: translateX(0);
-            }
+@keyframes lb {
+  form {
+    transform: translateX(0);
+  }
 
-            to {
-                transform: translateX(1000px);
-            }
-        }
+  to {
+    transform: translateX(1000px);
+  }
+}
 </style>

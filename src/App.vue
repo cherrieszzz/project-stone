@@ -1,28 +1,25 @@
 <template>
   <v-app>
-      <Navbar/>
+    <Navbar />
     <v-main>
       <v-container fluid>
-        
         <router-view></router-view>
       </v-container>
     </v-main>
- <Footer/> 
+    <Footer />
   </v-app>
 </template>
 
 <script>
-import Navbar from './components/Navbar.vue'
-import HelloWorld from './components/HelloWorld.vue'
-import Footer from './components/Footer.vue'
+import Navbar from "./components/Navbar.vue";
+import Footer from "./components/Footer.vue";
 export default {
-  components: { 
+  components: {
     Navbar,
-    Footer
+    Footer,
   },
-  name: 'App',
-  plugins:{
-    HelloWorld,
+  name: "App",
+  plugins: {
   },
   data: () => ({
     //
