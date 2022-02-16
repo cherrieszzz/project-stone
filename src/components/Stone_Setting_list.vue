@@ -2,17 +2,31 @@
   <div>
     <v-flex v-for="stone in stones" :key="stone._id">
       <v-card class="mx-auto my-2" outlined>
-        <v-card-text
-          >{{ stone.name }}
-          <div class="text-right">
-            <v-btn class="mx-1" icon depressed @click="DeleteFunc()">
-              <v-icon> mdi-delete </v-icon>
-            </v-btn>
+        <v-card-text>
+          <v-row justify="space-around">
+            <v-avatar>
+              <v-img
+                :src="stone.img_url"
+                style="border-radius: 50%; height: 2.5rem; width: 2.5rem"
+              ></v-img>
+            </v-avatar>
 
-            <v-btn class="mx-1" icon depressed>
-              <v-icon> mdi-pencil </v-icon>
-            </v-btn>
-          </div>
+            <strong class="mx-4 info--text text--darken-2">
+              {{ stone.name }}
+            </strong>
+
+            <v-spacer></v-spacer>
+
+            <div class="text-right">
+              <v-btn class="mx-1" icon depressed @click="DeleteFunc()">
+                <v-icon> mdi-delete </v-icon>
+              </v-btn>
+
+              <v-btn class="mx-1" icon depressed>
+                <v-icon> mdi-pencil </v-icon>
+              </v-btn>
+            </div>
+          </v-row>
         </v-card-text>
       </v-card>
     </v-flex>
@@ -30,7 +44,6 @@ export default {
   },
   mounted() {
     this.fetchStones();
-    this.DeleteFunc();
   },
 
   methods: {

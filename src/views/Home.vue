@@ -1,11 +1,7 @@
 <template>
   <div>
     <Stone />
-    <Stone />
-    <Stone />
-    <Stone />
-    <Stone />
-    <Stone />
+    
   </div>
 </template>
 

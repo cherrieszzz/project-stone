@@ -1,6 +1,8 @@
 <template>
   <v-app>
-    <Navbar />
+    <v-container>
+      <Navbar />
+    </v-container>
     <v-main>
       <v-container fluid>
         <router-view></router-view>
@@ -19,8 +21,7 @@ export default {
     Footer,
   },
   name: "App",
-  plugins: {
-  },
+  plugins: {},
   data: () => ({
     //
   }),

@@ -1,11 +1,11 @@
 <template>
   <v-row justify="space-around" class="stone">
-    <v-col>
+    <v-flex v-for="stone in stones" :key="stone._id">
       <v-dialog transition="dialog-top-transition" max-width="600">
         <template v-slot:activator="{ on, attrs }">
           <button v-bind="attrs" v-on="on" class="text-right">
             <v-img
-              :src="img_src"
+              :src="stone.img_url"
               class="stone-anime text-right"
               style="border-radius: 50%; height: 5rem; width: 5rem"
             ></v-img>
@@ -13,39 +13,46 @@
         </template>
         <template>
           <v-card>
-            <v-toolbar color="primary" dark>Stone Information</v-toolbar>
-
-            <v-img
-              :src="img_src"
-              style="height: 5rem; width: 5rem;border-radius: 50%"
-              class="
-                text-left
-              "
+          <v-card-title class="text-h5 lighten-2"> 商品信息 </v-card-title>
+            <v-card-text>
+              <v-img
+              :src="stone.img_url"
+              style="height: 5rem; width: 5rem; border-radius: 50%"
+              class="text-left"
               alt=""
             ></v-img>
-
-            <v-card-text class="text-right">
-              <div class="text-h4">{{ name }}</div>
-              {{ tradtion }}
+              <div class="text-h4">{{ stone.name }}</div>
+              {{ stone.info }}
             </v-card-text>
-            <v-card-actions class="justify-end">
-              <v-btn text @click="dialog.value = false">Close</v-btn>
-            </v-card-actions>
+            <v-divider></v-divider>
           </v-card>
         </template>
       </v-dialog>
-    </v-col>
+    </v-flex>
   </v-row>
 </template>
 
 <script>
+import axios from "axios";
 export default {
   data: () => ({
-    name: "Stone Name",
-    img_src: "https://api.ixiaowai.cn/api/api.php",
-    tradtion:
-      "Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.",
+    stones: [],
   }),
+  mounted() {
+    this.fetchStones();
+  },
+  methods: {
+    async fetchStones() {
+      return axios({
+        method: "get",
+        url: "http://localhost:8081/api/stones",
+      })
+        .then((response) => {
+          this.stones = response.data.stones;
+        })
+        .catch(() => {});
+    },
+  },
 };
 </script>
 
