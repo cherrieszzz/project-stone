@@ -5,7 +5,7 @@
 
       <v-spacer></v-spacer>
 
-      <v-btn icon to="/">
+      <v-btn icon to="/" value="favorites">
         <v-icon>mdi-home</v-icon> 
       </v-btn>
 
